@@ -10,14 +10,31 @@
 # Plovdiv. Know that are allways starting with a full tank_size.
 
 def gas_stations(distance, tank_size, stations):
-    
-    visited_stations = []
 
-    for station in range(len(stations) - 1):
-        tank_size += tank_size
-               
-    return visited_stations
-    
+    stations.append(distance)
+
+    visited = []
+    current_position = 0
+
+    while current_position < distance:
+        next_station = None
+
+        for station in stations:
+            if current_position + tank_size >= station:
+                next_station = station
+            else:
+                break  
+
+        if next_station is None:
+            print("You won't have enough fuel to complete the road.")
+            break
+
+        visited.append(next_station)
+        current_position = next_station
+
+    visited.pop()
+
+    return visited
 
 if __name__ == "__main__":
     
