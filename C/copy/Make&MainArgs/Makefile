@@ -23,4 +23,4 @@ strcompare.o: ${SRC_PREF}strcompare.c
 	${CC} -c ${SRC_PREF}strcompare.c 
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f $(find . -type f ! \( -name "Makefile"\))
