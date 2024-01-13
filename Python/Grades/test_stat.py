@@ -9,7 +9,6 @@ def write_file(path: str, data: str) -> str:
     with open(path, 'w') as f:
         return f.write(data)
 
-#Exercise functions:
        
 def find_exellent_students(students: list, grades: list) -> int:
     exelents = []
