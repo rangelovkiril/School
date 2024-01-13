@@ -29,14 +29,13 @@ int main(int argc, char **argv)
 
         if (sscanf(buff, "%s", command) == 1)
         {
-
             if (strcmp(command, "exit") == 0)
             {
                 printf("Exiting program.\n");
                 return 0;
             }
 
-            if (strcmp(command, "printall") == 0)
+            else if (strcmp(command, "printall") == 0)
                 for (int i = 0; i < MAX_PROCESSES; ++i)
                 {
                     if (!processes[i].pid)
@@ -45,33 +44,27 @@ int main(int argc, char **argv)
                     printf("Process %s: %d\n", processes[i].name, processes[i].pid);
                 }
 
-            if (strcmp(command, "create") == 0)
+            else if (strcmp(command, "create") == 0)
             {
                 if (sscanf(buff, "%*s %s", name) == 1)
-                {
                     createnewprocess(name);
-                }
+
                 else
-                {
                     printf("No name givven. Please enter name\n");
-                }
             }
 
-            if (strcmp(command, "stop") == 0)
+            else if (strcmp(command, "stop") == 0)
             {
                 if (sscanf(buff, "%*s %d", &pid) == 1)
-                {
                     stopprocess(pid);
-                }
+
                 else
-                {
                     printf("Invalid input for stop command. Usage: stop <pid>\n");
-                }
             }
-        }
-        else
-        {
-            printf("Invalid command. Please try again.\n");
+            else
+            {
+                printf("Invalid command. Please try again.\n");
+            }
         }
     }
 

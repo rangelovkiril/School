@@ -2,20 +2,23 @@
 
 u32 uniquepids[MAX_PROCESSES] = {0};
 Process processes[MAX_PROCESSES];
-u32 processcount = 5;
+u32 processcount = 0;
 
-static u32 nextpid()
+u32 nextpid()
 {
+    int isunique;
     u32 nextpid;
 
-    do
+    while (!isunique)
     {
-        srand((u32)time(NULL));
+        isunique = 1;
         nextpid = rand();
-
-        uniquepids[processcount] = nextpid; 
+    
+        for (int i = 0; i < MAX_PROCESSES; ++i)
+            if (uniquepids[i] == nextpid)
+                isunique = 0;
         
-    } while(uniquepids[processcount] == nextpid);
+    }
 
     return nextpid;
 }
@@ -37,7 +40,6 @@ u32 createnewprocess(char *name)
 
 void stopprocess(u32 pid)
 {
-
     u32 stopidx = -1;
     u32 lastidx = 0;
 

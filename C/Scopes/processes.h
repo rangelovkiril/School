@@ -5,6 +5,8 @@
 #include <string.h>
 #include <time.h>
 
+#include <stdio.h>
+
 typedef unsigned int u32;
 
 typedef struct  
