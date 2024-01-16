@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     {
         if (fgets(input, sizeof(input), stdin) == NULL)
         {
-            printf("Unexpected error occured. Exiting...\n");
+            puts("Unexpected error occured. Exiting...");
             break;
         }
 
@@ -30,14 +30,14 @@ int main(int argc, char **argv)
 
         if (!formated)
         {
-            printf("Invalid input format. Please enter a valid command.\n\n");
+            puts("Invalid input format. Please enter a valid command.");
+            putchar('\n');
             continue;
         }
 
         if (strcmp(command, "exit") == 0)
         {
-            // Exit the program
-            printf("Exiting the program...\n");
+            puts("Exiting the program...");
             break;
         }
 
@@ -45,7 +45,8 @@ int main(int argc, char **argv)
             switchlight(roomnumber, &house);
 
         else if (strcmp(command, "switch") == 0 && formated == 1)
-            printf("No room number givven. Please enter a room number.\n\n");
+            puts("No room number givven. Please enter a room number.\n");
+            putchar('\n');
 
         if (strcmp(command, "printstate") == 0)
 

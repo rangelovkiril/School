@@ -4,7 +4,7 @@ void switchlight(int lightpos, char *house)
 {
 
     if (lightpos > 7 || lightpos < 0){
-        printf("Invalid room number. Please enter number from 1 to 8.\n");
+        puts("Invalid room number. Please enter number from 1 to 8.");
         return;
     }
 
@@ -17,7 +17,7 @@ void printstate(char house)
 {
     if (!house)
     {
-        printf("No lights on.\n");
+        puts("No lights on.");
         return;
     }
 
@@ -27,5 +27,5 @@ void printstate(char house)
         if ((house >> i) & 1)
             printf("%d ", i + 1);
 
-    printf("\n");
+    putchar("\n");
 };
