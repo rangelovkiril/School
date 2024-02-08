@@ -1,6 +1,0 @@
-#! /bin/bash
-    gcc -c math.o math.c
-    ar q math.a math.o
-    gcc -c main.o main.c
-    gcc -o main main.o -L. -l:math.a
-    ./main

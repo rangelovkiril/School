@@ -1,0 +1,6 @@
+[submodule "C"]
+	path = C
+	url = ./C/
+[submodule "Python"]
+	path = Python
+	url = ./Python/
