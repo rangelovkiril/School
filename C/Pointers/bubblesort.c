@@ -14,7 +14,8 @@ void printarray(int *, size_t);
 void bubbleSort(int *, size_t, int (*)(const void *, const void *), void (*)(void *, void *)); 
 // End
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) 
+{
   int arr1[SIZE] = {-34, 19, 46, -1, 24, 96, 99, -35, 39, -43};
   int arr2[SIZE] = {15, 45, -74, 54, -19, 73, -44, 3, 60, -42};
 

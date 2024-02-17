@@ -1,5 +1,7 @@
-void swap(void * a, void * b){
-    int * temp = (int *)a;
-    a = (int *) b; 
-    b =     temp;
+void swap(void * a, void * b)
+{
+  int temp = *((int *)a);
+
+  *((int *)a) = *((int *)b);
+  *((int *)b) = temp;
 }
