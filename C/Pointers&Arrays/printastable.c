@@ -1,4 +1,4 @@
-#include "stdio.h"
+#include <stdio.h>
 
 #define COLS 4
 #define ROWS 2
@@ -9,7 +9,8 @@ int findwidest(int [][COLS], int);
 
 void printastable(int [][COLS], int); 
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) 
+{
 
   int arr[ROWS][COLS] = {{1000,2, 3, 4},{5, 6, 7, 8}};
 
@@ -22,7 +23,7 @@ int countdigits(int number)
 {
   int count;
   for (count = 0; number != 0; ++count, number /= 10);
-  return (count) ? count : 1;
+  return count ? count : 1;
 }
 
 int findwidest(int arr[][COLS], int rows) 
